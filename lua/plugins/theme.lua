@@ -1,1 +1,0 @@
-/home/errant/.config/omarchy/current/theme/neovim.lua

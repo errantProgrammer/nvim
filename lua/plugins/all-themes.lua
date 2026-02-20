@@ -2,6 +2,23 @@ return {
   -- Load all theme plugins but don't apply them
   -- This ensures all colorschemes are available for hot-reloading
   {
+    "scottmckendry/cyberdream.nvim",
+    name = "cyberdream",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+  },
+  {
+    "cpea2506/one_monokai.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+  },
+  {
     "ribru17/bamboo.nvim",
     lazy = true,
     priority = 1000,
@@ -57,5 +74,19 @@ return {
     "folke/tokyonight.nvim",
     lazy = true,
     priority = 1000,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
+  -- 2. Configuracion de esquema a utilizar:
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "one_monokai",
+    },
   },
 }
