@@ -1,15 +1,14 @@
 return {
   {
     "iurimateus/luasnip-latex-snippets.nvim",
-    -- Este plugin contiene los snippets de Gilles Castel
+    ft = { "tex", "markdown" },
+    dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
     config = function()
       require("luasnip-latex-snippets").setup({
-        use_treesitter = true, -- Usa Treesitter para saber si estás en una fórmula
+        use_treesitter = true,
+        allow_on_markdown = false,
       })
-      -- Importante: Permite que los snippets se activen automáticamente al escribir
       require("luasnip").config.setup({ enable_autosnippets = true })
     end,
-    -- Asegúrate de que cargue después de LuaSnip
-    dependencies = { "L3MON4D3/LuaSnip", "nvim-treesitter/nvim-treesitter" },
   },
 }
