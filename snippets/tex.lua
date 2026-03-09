@@ -1,8 +1,20 @@
 local ls = require("luasnip")
 local s = ls.snippet
+local t = ls.text_node
 local i = ls.insert_node
+local f = ls.function_node
+local c = ls.choice_node
+local d = ls.dynamic_node
+local sn = ls.snippet_node
+local isn = ls.indent_snippet_node
+local r = ls.restore_node
+local l = require("luasnip.extras").lambda
+local rep = require("luasnip.extras").rep
+local p = require("luasnip.extras").partial
+local m = require("luasnip.extras").match
+local dl = require("luasnip.extras").dynamic_lambda
 local fmt = require("luasnip.extras.fmt").fmt
-local parse = ls.parser.parse_snippet
+local parse = ls.parser.parser_snippet
 
 return {
   s(
@@ -70,6 +82,27 @@ return {
         i(3, "Nombre de los autores"),
         i(4, "PUCP"),
         i(5, "Pontificia Universidad Católica del Perú"),
+      }
+    )
+  ),
+  s(
+    "svg",
+    fmt(
+      [[ 
+  \begin{{figure}}[ht]
+    \centering
+    \def\svgwidth{{ {}cm }}
+    \import{{ {} }}{{ {}.pdf_tex }}
+    \caption{{ {} }}
+    \label{{ fig:{} }}
+  \end{{figure}}
+]],
+      {
+        i(1, "size"),
+        i(2, "figuras/"),
+        i(3, "name-figure"),
+        i(4, "caption"),
+        i(5, "img"),
       }
     )
   ),
