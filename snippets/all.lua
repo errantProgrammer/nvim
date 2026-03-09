@@ -16,31 +16,19 @@ local dl = require("luasnip.extras").dynamic_lambda
 local fmt = require("luasnip.extras.fmt").fmt
 local parse = ls.parser.parser_snippet
 
-local function filename()
-  local name = vim.fn.expand("%:t:r")
-  name = string.upper(name)
-  return { name .. "_H" }
-end
-
 return {
   s(
-    "test",
+    "header",
     fmt(
-      [[
-#ifndef {}
-#define {}
-#include <stdio.h>
-
-{}
-
-#endif // {}
-]],
-      {
-        f(filename, {}),
-        f(filename, {}),
-        i(1),
-        f(filename, {}),
-      }
+      [[ 
+                              __  ____                                                           
+  ___  ______________ _____  / /_/ __ \_________  ____ __________ _____ ___  ____ ___  ___  _____
+ / _ \/ ___/ ___/ __ `/ __ \/ __/ /_/ / ___/ __ \/ __ `/ ___/ __ `/ __ `__ \/ __ `__ \/ _ \/ ___/
+/  __/ /  / /  / /_/ / / / / /_/ ____/ /  / /_/ / /_/ / /  / /_/ / / / / / / / / / / /  __/ /    
+\___/_/  /_/   \__,_/_/ /_/\__/_/   /_/   \____/\__, /_/   \__,_/_/ /_/ /_/_/ /_/ /_/\___/_/     
+                                               /____/  
+    ]],
+      {}
     )
   ),
 }

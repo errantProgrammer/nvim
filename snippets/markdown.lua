@@ -16,25 +16,56 @@ local dl = require("luasnip.extras").dynamic_lambda
 local fmt = require("luasnip.extras.fmt").fmt
 local parse = ls.parser.parser_snippet
 
+local function filename()
+  local name = vim.fn.expand("%:t:r")
+  return { name }
+end
+
 return {
   s(
-    "svg",
+    "main",
     fmt(
       [[ 
-  \begin{{figure}}[ht]
-    \centering
-    \def\svgwidth{{ {}cm }}
-    \import{{ {} }}{{ {}.pdf_tex }}
-    \caption{{ {} }}
-    \label{{ fig:{} }}
-  \end{{figure}}
-]],
+---
+id: {}
+aliases:
+tags: 
+---
+
+# {}
+
+{}
+    ]],
       {
-        i(1, "size"),
-        i(2, "figuras/"),
-        i(3, "name-figure"),
-        i(4, "caption"),
-        i(5, "img"),
+        f(filename, {}),
+        f(filename, {}),
+        i(1, "content"),
+      }
+    )
+  ),
+  s(
+    "main-pucp",
+    fmt(
+      [[ 
+    ---
+    id: {}
+    aliases:
+    tags:
+    - pucp
+    - {}
+    - {}
+    ---
+    
+    # {}
+    
+    {}
+    ]],
+      {
+        f(filename, {}),
+        i(1, "course-name"),
+        i(2, "cycle"),
+        f(filename, {}),
+        i(3, "content"),
       }
     )
   ),
