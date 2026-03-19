@@ -38,4 +38,28 @@ return {
       }
     )
   ),
+  s(
+    "algo",
+    fmt(
+      [[ 
+\begin{{algorithm}}
+  \TitleOfAlgo{{ {} }}
+  \SetAlgoLined
+  \KwData{{ {} }}
+  \KwResult{{ {} }}
+  \SetAlgoRefName{{ {} }}
+  \caption{{ {} }}
+  \label{{ algo:{} }}
+\end{{algorithm}}
+    ]],
+      {
+        i(1, "Title of Algorithm"),
+        i(2, "Data"),
+        i(3, "Result"),
+        i(4, "Reference of Algorithm"),
+        i(5, "Caption of Algorithm"),
+        i(6, "label"),
+      }
+    )
+  ),
 }

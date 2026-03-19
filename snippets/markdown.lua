@@ -28,8 +28,8 @@ return {
       [[ 
 ---
 id: {}
-aliases:
-tags: 
+aliases: []
+tags: []
 ---
 
 # {}
@@ -49,7 +49,7 @@ tags:
       [[ 
     ---
     id: {}
-    aliases:
+    aliases: []
     tags:
     - pucp
     - {}
