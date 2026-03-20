@@ -22,16 +22,16 @@ function M.setup_course_structure(opts)
       if file then
         local content = string.format(
           [[
-          ---
-          id: %s
-          aliases: []
-          tags:
-          - pucp
-          - %s
-          - %s
-          ---
+---
+id: %s
+aliases: []
+tags:
+- pucp
+- %s
+- %s
+---
 
-          # %s
+# %s
 ]],
           semana,
           curso,
