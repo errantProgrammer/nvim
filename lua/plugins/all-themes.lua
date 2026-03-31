@@ -82,11 +82,24 @@ return {
       },
     },
   },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    priority = 1000,
+    name = "kanagawa",
+    opts = {
+      transparent = true,
+      theme = "dragon",
+      background = {
+        dark = "dragon",
+      },
+    },
+  },
   -- 2. Configuracion de esquema a utilizar:
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "kanagawa",
     },
   },
 }
