@@ -45,11 +45,6 @@ return {
     priority = 1000,
   },
   {
-    "rebelot/kanagawa.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
     "tahayvr/matteblack.nvim",
     lazy = true,
     priority = 1000,
@@ -88,18 +83,31 @@ return {
     priority = 1000,
     name = "kanagawa",
     opts = {
-      transparent = true,
-      theme = "dragon",
+      theme = "wave",
       background = {
         dark = "dragon",
+        light = "lotus",
       },
     },
   },
+  {
+    "savq/melange-nvim",
+    lazy = true,
+    priority = 1000,
+    name = "melange",
+  },
+  {
+    "thesimonho/kanagawa-paper.nvim",
+    lazy = false,
+    priority = 1000,
+    name = "kanagawa-paper",
+  },
+
   -- 2. Configuracion de esquema a utilizar:
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "melange",
     },
   },
 }
