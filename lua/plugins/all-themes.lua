@@ -69,6 +69,7 @@ return {
     "folke/tokyonight.nvim",
     lazy = true,
     priority = 1000,
+    name = "tokyonight",
     opts = {
       transparent = true,
       styles = {
@@ -101,13 +102,31 @@ return {
     lazy = false,
     priority = 1000,
     name = "kanagawa-paper",
+    opts = {
+      transparent = true,
+    },
   },
-
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+    name = "nightfox",
+    opts = {
+      options = {
+        transparent = false, -- Activa su transparencia nativa
+        styles = {
+          comments = "italic",
+          keywords = "bold", -- Hace que las palabras clave resalten más sobre el blur
+          types = "bold",
+        },
+      },
+    },
+  },
   -- 2. Configuracion de esquema a utilizar:
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "melange",
+      colorscheme = "nightfox",
     },
   },
 }

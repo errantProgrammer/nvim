@@ -21,6 +21,10 @@ if __main__ === "__main__":
   main()
 ```
 
+```language
+
+```
+
 ## Preview img
 
 ![lainom](../omarchy/themes/lainom/backgrounds/lain5.jpg)

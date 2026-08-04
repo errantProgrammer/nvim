@@ -21,6 +21,24 @@ local function filename()
   return { name }
 end
 
+local function generar_toc_dinamico()
+  local current_file_dir = vim.fn.expand("%:p:h")
+  local docs_path = current_file_dir .. "/docs"
+  local files = vim.fn.glob(docs_path .. "/**/*.md", true, true)
+  if #files == 0 then
+    return { "*No se encontraron archivos .md en: " .. docs_path .. "*" }
+  end
+  local toc_lines = { "" }
+  for _, filepath in ipairs(files) do
+    local filename_no_ext = vim.fn.fnamemodify(filepath, ":t:r")
+    local title = filename_no_ext:gsub("[-_]", " ")
+    local relative_path = filepath:match("docs/.*$") or filepath
+    local link = string.format("- [%s](%s)", title, relative_path)
+    table.insert(toc_lines, link)
+  end
+  return toc_lines
+end
+
 return {
   s(
     "main",
@@ -69,4 +87,7 @@ tags: []
       }
     )
   ),
+  s("docstoc", {
+    f(generar_toc_dinamico, {}),
+  }),
 }

@@ -15,7 +15,7 @@ return {
         if file_extension == "tex" then
           return "figure/" .. base_name
         else
-          return "images/" .. base_name
+          return "img/" .. base_name
         end
       end,
       file_name = "%Y-%m-%d-%H-%M-%S",
