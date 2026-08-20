@@ -8,3 +8,7 @@ vim.api.nvim_create_user_command("CursoPucp", function()
 end, { desc = "Generar estructura de curso 15 semanas" })
 
 vim.api.nvim_create_user_command("CursoLinks", scripts.generate_readme_curso_pucp, { desc = "Generar links en README" })
+
+--- Atajos de teclado
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Salir a modo normal" })
+--- vim.keymap.set("i", "kj", "<Esc>", { desc = "Salir a modo normal" })

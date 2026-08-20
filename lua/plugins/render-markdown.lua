@@ -196,6 +196,12 @@ return {
         highlight = "RenderMarkdownQuote",
         category = "obsidian",
       },
+      dictionary = {
+        raw = "[!DICTIONARY]",
+        rendered = "uwu Dictionary",
+        highlight = "RenderMarkdownInfo",
+        category = "obsidian",
+      },
     },
   },
   ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
