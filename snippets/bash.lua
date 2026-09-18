@@ -13,11 +13,12 @@ return {
       [[
 #!/usr/bin/env bash
 
-{}
+<1>
 ]],
       {
         i(1),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
 }

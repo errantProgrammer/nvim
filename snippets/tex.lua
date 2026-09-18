@@ -17,17 +17,18 @@ local fmt = require("luasnip.extras.fmt").fmt
 local parse = ls.parser.parser_snippet
 
 return {
+  -- Figura SVG
   s(
     "svg",
     fmt(
-      [[ 
-  \begin{{figure}}[ht]
-    \centering
-    \def\svgwidth{{ {}cm }}
-    \import{{ {} }}{{ {}.pdf_tex }}
-    \caption{{ {} }}
-    \label{{ fig:{} }}
-  \end{{figure}}
+      [[
+\begin{figure}[ht]
+  \centering
+  \def\svgwidth{<1>cm}
+  \import{<2>}{<3>.pdf_tex}
+  \caption{<4>}
+  \label{fig:<5>}
+\end{figure}
 ]],
       {
         i(1, "size"),
@@ -35,23 +36,26 @@ return {
         i(3, "name-figure"),
         i(4, "caption"),
         i(5, "img"),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
+
+  -- Algoritmo
   s(
     "algo",
     fmt(
-      [[ 
-\begin{{algorithm}}
-  \TitleOfAlgo{{ {} }}
+      [[
+\begin{algorithm}
+  \TitleOfAlgo{<1>}
   \SetAlgoLined
-  \KwData{{ {} }}
-  \KwResult{{ {} }}
-  \SetAlgoRefName{{ {} }}
-  \caption{{ {} }}
-  \label{{ algo:{} }}
-\end{{algorithm}}
-    ]],
+  \KwData{<2>}
+  \KwResult{<3>}
+  \SetAlgoRefName{<4>}
+  \caption{<5>}
+  \label{algo:<6>}
+\end{algorithm}
+]],
       {
         i(1, "Title of Algorithm"),
         i(2, "Data"),
@@ -59,49 +63,58 @@ return {
         i(4, "Reference of Algorithm"),
         i(5, "Caption of Algorithm"),
         i(6, "label"),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
+
+  -- Bloque de código
   s(
     "codebox",
     fmt(
-      [[ 
-\begin{{codebox}}[ {} ]{{ {} }}
-{}
-\end{{codebox}}
-    ]],
+      [[
+\begin{codebox}[<1>]{<2>}
+<3>
+\end{codebox}
+]],
       {
         i(1, "Lenguaje de Programación"),
         i(2, "Titulo"),
         i(3, "codigo"),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
+
+  -- Código en línea
   s(
     "codeinline",
     fmt(
-      [[ 
-  \mintinline{{ {} }}{{ {} }}
-
-  ]],
+      [[
+\mintinline{<1>}{<2>}
+]],
       {
         i(1, "Lenguaje de Programación"),
         i(2, "Codigo"),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
+
+  -- Flagbox
   s(
     "flagbox",
     fmt(
       [[
-\begin{{flagbox}}{{ {} }}
-{}
-\end{{flagbox}} 
-    ]],
+\begin{flagbox}{<1>}
+<2>
+\end{flagbox}
+]],
       {
         i(1, "titulo"),
         i(2, "flag"),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
 }

@@ -40,34 +40,38 @@ local fmt = require("luasnip.extras.fmt").fmt
 local parse = ls.parser.parser_snippet
 
 return {{
-  {}
+  <1>
 }}
   ]],
       {
         i(1, "--new lua snip"),
-      }
+      },
+      { delimiters = "<>" }
     )
   ),
   s(
     "add-snip",
     fmt(
-      [[
-      s(
-        {}{}{},
-        fmt(
-        {} {} {}
-        , {{}}
-        )
-      )
-      ]],
+      [=[
+s(
+  "<1>",
+  fmt(
+    [[
+<2>
+]],
+    {
+      <3>
+    },
+    { delimiters = "<<>>" }
+  )
+),
+]=],
       {
-        t('"'),
-        i(1, "name"),
-        t('"'),
-        t("[["),
-        i(2, "content"),
-        t("]]"),
-      }
+        i(1, "trigger"),
+        i(2, "contenido"),
+        i(3, 'i(1, "placeholder")'),
+      },
+      { delimiters = "<>" }
     )
   ),
 }

@@ -1,3 +1,10 @@
+-- TODO: Example
+-- HACK: asdfsadf
+-- WARN: asdfasdf
+-- PERF: asfdasdf
+-- TEST: This is a test
+-- NOTE: This is a note
+-- FIX: This is a note
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
