@@ -62,4 +62,46 @@ return {
       }
     )
   ),
+  s(
+    "codebox",
+    fmt(
+      [[ 
+\begin{{codebox}}[ {} ]{{ {} }}
+{}
+\end{{codebox}}
+    ]],
+      {
+        i(1, "Lenguaje de Programación"),
+        i(2, "Titulo"),
+        i(3, "codigo"),
+      }
+    )
+  ),
+  s(
+    "codeinline",
+    fmt(
+      [[ 
+  \mintinline{{ {} }}{{ {} }}
+
+  ]],
+      {
+        i(1, "Lenguaje de Programación"),
+        i(2, "Codigo"),
+      }
+    )
+  ),
+  s(
+    "flagbox",
+    fmt(
+      [[
+\begin{{flagbox}}{{ {} }}
+{}
+\end{{flagbox}} 
+    ]],
+      {
+        i(1, "titulo"),
+        i(2, "flag"),
+      }
+    )
+  ),
 }

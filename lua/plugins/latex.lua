@@ -3,10 +3,26 @@ return {
     "lervag/vimtex",
     lazy = false,
     init = function()
-      --vim.g.vimtex_view_general_viewer = "okular"
+      -- vim.g.vimtex_fold_enabled = 1
+      -- vim.g.vimtex_fold_types = {
+      --   sections = {
+      --     parse_level = 1,
+      --     sections = {
+      --       "part",
+      --       "chapter",
+      --       "section",
+      --       "subsection",
+      --       "subsubsection",
+      --     },
+      --   },
+      --   envs = {
+      --     blacklist = {},
+      --   },
+      -- }
+      -- --vim.g.vimtex_view_general_viewer = "okular"
       --vim.g.vimtex_view_general_options = "--unique file:@pdf#src:@line@tex"
-      vim.g.vimtex_view_general_viewer = "okular"
-      vim.g.vimtex_view_general_options = "--unique file:@pdf#src:@line@tex"
+      vim.g.vimtex_view_general_viewer = "zathura"
+      --vim.g.vimtex_view_general_options = "--unique file:@pdf#src:@line@tex"
       vim.g.vimtex_compiler_method = "latexmk"
       vim.g.vimtex_compiler_latexmk = {
         aux_dir = "",
@@ -20,10 +36,9 @@ return {
           "-file-line-error",
           "-synctex=1",
           "-interaction=nonstopmode",
-          "-shell-escape", -- Requerido para minted
+          "-shell-escape",
         },
       }
-
       vim.g.vimtex_quickfix_mode = 0 -- No abrir quickfix si no hay errores graves
     end,
   },
