@@ -2,132 +2,36 @@ return {
   -- Load all theme plugins but don't apply them
   -- This ensures all colorschemes are available for hot-reloading
   {
-    "scottmckendry/cyberdream.nvim",
-    name = "cyberdream",
+    "bluz71/vim-moonfly-colors",
+    name = "moonfly",
     lazy = false,
     priority = 1000,
-    opts = {
-      transparent = true,
-    },
   },
   {
-    "cpea2506/one_monokai.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {
-      transparent = true,
-    },
-  },
-  {
-    "ribru17/bamboo.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "sainnhe/everforest",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "kepano/flexoki-neovim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "tahayvr/matteblack.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "shaunsingh/nord.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-    priority = 1000,
-    name = "tokyonight",
-    style = "day",
-    -- opts = {
-    --   transparent = true,
-    --   styles = {
-    --     sidebars = "transparent",
-    --     floats = "transparent",
-    --   },
-    -- },
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = true,
-    priority = 1000,
-    name = "kanagawa",
-    opts = {
-      theme = "wave",
-      background = {
-        dark = "dragon",
-        light = "lotus",
-      },
-    },
-  },
-  {
-    "savq/melange-nvim",
-    lazy = true,
-    priority = 1000,
-    name = "melange",
-  },
-  {
-    "thesimonho/kanagawa-paper.nvim",
+    "embark-theme/vim",
+    name = "embark",
     lazy = false,
     priority = 1000,
-    name = "kanagawa-paper",
-    opts = {
-      transparent = true,
-    },
   },
+  -- lazy
   {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-    name = "nightfox",
-    opts = {
-      options = {
-        transparent = false, -- Activa su transparencia nativa
-        styles = {
-          comments = "italic",
-          keywords = "bold", -- Hace que las palabras clave resalten más sobre el blur
-          types = "bold",
-        },
-      },
-    },
+    "ray-x/aurora",
+    init = function()
+      vim.g.aurora_italic = 1
+      vim.g.aurora_transparent = 1
+      vim.g.aurora_bold = 1
+    end,
+    config = function()
+      vim.cmd.colorscheme("aurora")
+      -- override defaults
+      vim.api.nvim_set_hl(0, "@number", { fg = "#e933e3" })
+    end,
   },
   -- 2. Configuracion de esquema a utilizar:
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "aurora",
     },
   },
 }
